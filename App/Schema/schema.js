@@ -46,6 +46,8 @@ const typeDefs = `
 
       type Mutation {
           createPerson(input: PersonInput): Person
+          updatePerson(input: PersonInput): Person
+          deletePerson(id: ID!): String
       }
 
 `;

@@ -29,7 +29,23 @@ const queries = {
                       else resolve(newPerson)
                   })
               })
-          },
+    },
+      updatePerson: (root, {input}) => {
+            return new Promise((resolve, object) => {
+                Persons.findOneAndUpdate({ _id: input.id }, input, {new:true}, (err, person) =>{
+                    if(err) reject (err)
+                    else resolve(person)
+                })
+            })
+    },
+      deletePerson: (root, { id }) => {
+          return new Promise((resolve, object) => {
+              Persons.remove({ _id: id}, (err) => {
+                  if(err) reject (err)
+                  else resolve('Successfully deleted person')
+              })
+          })
+      }
 };
 
 export default queries;

@@ -9,6 +9,8 @@ export const resolvers = {
       getOnePerson: personsQueries.getOnePerson
   },
     Mutation: {
-      createPerson: personsQueries.createPerson
+      createPerson: personsQueries.createPerson,
+      updatePerson: personsQueries.updatePerson,
+      deletePerson: personsQueries.deletePerson
         }
 }
